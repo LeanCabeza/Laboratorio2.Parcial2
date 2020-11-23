@@ -74,9 +74,10 @@ namespace CasaDeComida_v2
                 {
                     Comida comidaAux;
                     comidaAux = Inventario.Cocinandose.Dequeue();
+                    total = comidaAux.Precio + total;
                     ConexionBD.SubirComida(comidaAux);
                     Inventario.Preparado.Enqueue(comidaAux);
-                    total = comidaAux.Precio + total;
+                    
 
                     RefreshPedidos();
                     RefreshEntregados();

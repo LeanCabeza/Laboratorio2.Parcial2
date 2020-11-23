@@ -22,7 +22,6 @@ namespace Entidades
                                                     + DateTime.Now.ToString() 
                                                     + "\n El pedido fue de : " + obj.NombreComida.ToString() + "\n Tipo : " + obj.TipoComida.ToString() 
                                                     + "\n Precio $" + obj.Precio.ToString()));
-
                 }
                 return true;
             }

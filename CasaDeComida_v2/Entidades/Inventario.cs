@@ -31,7 +31,7 @@ namespace Entidades
 
         /*
          * 
-         * SERIALIZO PEDIDOS POR SIMPLE GUSTO , PARA TENER ALGO QUE CARGAR AL PRINCIPIO CUANDO ARRANQUE EL PROGRAMA 
+         * SERIALIZO PEDIDOS PARA GENERAR EL XML QUE DESPUES VOY A CARGAR :D 
          * 
                 public static bool SerializarPedidos()
                 {
