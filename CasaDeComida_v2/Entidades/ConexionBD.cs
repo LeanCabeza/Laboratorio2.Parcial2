@@ -16,7 +16,7 @@ namespace Entidades
         static ConexionBD()
         {
             conexionBD = new SqlConnection("Data Source = DESKTOP-DCNPJDC\\SQLEXPRESS ; Initial Catalog = CasaDeComida;Integrated Security=true");
-        }
+        }                                                       //("Data Source = DESKTOP-DCNPJDC\\SQLEXPRESS ; Initial Catalog = CasaDeComida;Integrated Security=true");
 
         public static ETipo MapeoStringAeTipo (string aux )
         {
