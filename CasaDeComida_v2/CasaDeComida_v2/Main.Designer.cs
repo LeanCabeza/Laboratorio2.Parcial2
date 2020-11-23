@@ -33,7 +33,6 @@
             this.lbl_PedidosPorEntregar = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lbl_PedidosEntregados = new System.Windows.Forms.Label();
-            this.btn_AgregarPedido = new System.Windows.Forms.Button();
             this.dgv_Cocinandose = new System.Windows.Forms.DataGridView();
             this.dgv_Entregados = new System.Windows.Forms.DataGridView();
             this.btn_ActualizarPedidos = new System.Windows.Forms.Button();
@@ -62,16 +61,6 @@
             this.lbl_PedidosEntregados.Size = new System.Drawing.Size(170, 19);
             this.lbl_PedidosEntregados.TabIndex = 20;
             this.lbl_PedidosEntregados.Text = "Pedidos Entregados";
-            // 
-            // btn_AgregarPedido
-            // 
-            this.btn_AgregarPedido.Location = new System.Drawing.Point(406, 257);
-            this.btn_AgregarPedido.Name = "btn_AgregarPedido";
-            this.btn_AgregarPedido.Size = new System.Drawing.Size(159, 35);
-            this.btn_AgregarPedido.TabIndex = 26;
-            this.btn_AgregarPedido.Text = "Agregar Pedido";
-            this.btn_AgregarPedido.UseVisualStyleBackColor = true;
-            this.btn_AgregarPedido.Click += new System.EventHandler(this.btn_AgregarPedido_Click_1);
             // 
             // dgv_Cocinandose
             // 
@@ -110,6 +99,7 @@
             // 
             // btn_ActualizarPedidos
             // 
+            this.btn_ActualizarPedidos.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ActualizarPedidos.Location = new System.Drawing.Point(152, 257);
             this.btn_ActualizarPedidos.Name = "btn_ActualizarPedidos";
             this.btn_ActualizarPedidos.Size = new System.Drawing.Size(145, 35);
@@ -120,6 +110,7 @@
             // 
             // btn_ActualizarEntregados
             // 
+            this.btn_ActualizarEntregados.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ActualizarEntregados.Location = new System.Drawing.Point(650, 257);
             this.btn_ActualizarEntregados.Name = "btn_ActualizarEntregados";
             this.btn_ActualizarEntregados.Size = new System.Drawing.Size(145, 35);
@@ -131,10 +122,10 @@
             // lbl_RecaudacionTotal
             // 
             this.lbl_RecaudacionTotal.AutoSize = true;
-            this.lbl_RecaudacionTotal.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Italic);
-            this.lbl_RecaudacionTotal.Location = new System.Drawing.Point(160, 334);
+            this.lbl_RecaudacionTotal.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RecaudacionTotal.Location = new System.Drawing.Point(495, 346);
             this.lbl_RecaudacionTotal.Name = "lbl_RecaudacionTotal";
-            this.lbl_RecaudacionTotal.Size = new System.Drawing.Size(207, 29);
+            this.lbl_RecaudacionTotal.Size = new System.Drawing.Size(233, 29);
             this.lbl_RecaudacionTotal.TabIndex = 31;
             this.lbl_RecaudacionTotal.Text = "Recaudacion Total";
             // 
@@ -149,7 +140,6 @@
             this.Controls.Add(this.btn_ActualizarPedidos);
             this.Controls.Add(this.dgv_Entregados);
             this.Controls.Add(this.dgv_Cocinandose);
-            this.Controls.Add(this.btn_AgregarPedido);
             this.Controls.Add(this.lbl_PedidosEntregados);
             this.Controls.Add(this.lbl_PedidosPorEntregar);
             this.Name = "Main";
@@ -166,7 +156,6 @@
         private System.Windows.Forms.Label lbl_PedidosPorEntregar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label lbl_PedidosEntregados;
-        private System.Windows.Forms.Button btn_AgregarPedido;
         private System.Windows.Forms.DataGridView dgv_Cocinandose;
         private System.Windows.Forms.DataGridView dgv_Entregados;
         private System.Windows.Forms.Button btn_ActualizarPedidos;

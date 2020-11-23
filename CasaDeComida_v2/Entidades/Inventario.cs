@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Archivo;
 
 namespace Entidades
 {
@@ -26,6 +27,37 @@ namespace Entidades
         public static Queue<Comida> Preparado
         {
             get { return preparado; }
+        }
+
+
+
+        /// <summary>
+        /// Carga las comidas que estan guardadas en el xml
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        public static bool CargarComidasDelXml()
+        {
+ 
+            List<Comida> listaAux = new List<Comida>();
+
+            string path = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "ListaPedidos.xml");
+
+            Xml<List<Comida>> auxPedidos = new Xml<List<Comida>>();
+
+            if(auxPedidos.Leer(path,out listaAux))
+            {
+                ///Si entro hasta aca es porque se pudo leer bien el xml ,ahi carga en la cola la lista de comidas en la cola.
+                foreach (Comida c in listaAux)
+                {
+                    cocinandose.Enqueue(c);
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -53,37 +85,5 @@ namespace Entidades
                     return auxPedidos.Guardar(path, pedidos);
                 }
         */
-
-        public static bool CargarComidasDelXml()
-        {
-
-            List<Comida> listaAux = new List<Comida>();
-
-            string path = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "ListaPedidos.xml");
-
-            Xml<List<Comida>> auxPedidos = new Xml<List<Comida>>();
-
-            auxPedidos.Leer(path,out listaAux);
-
-            foreach (Comida c in listaAux)
-            {
-                cocinandose.Enqueue(c);
-            }
-
-            return true;
-
-
-            //List<Comida> listaAux = new List<Comida>();
-            /* 
-             * Harcodeando datos datos a modo prueba 
-             * 
-             * 
-             * listaAux.Add(new Comida("Papa Frita",ETipo.ComidaRapida,250));
-             listaAux.Add(new Comida("Papa Con Cheddar", ETipo.ComidaRapida, 250));
-             listaAux.Add(new Comida("Pizza", ETipo.ComidaRapida, 250));
-             listaAux.Add(new Comida("Fideo moñito", ETipo.ComidaRapida, 250));
-             listaAux.Add(new Comida("Hamburguesa", ETipo.ComidaRapida, 250));*/
-
-        }
     }
 }

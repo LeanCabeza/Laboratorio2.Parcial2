@@ -23,14 +23,22 @@ namespace Entidades
         ETipo tipoComida;
         int precio;
 
+        #region Constructor 
 
-        //CONSTRUCTOR
-
+        /// <summary>
+        /// Constructor vacio
+        /// </summary>
         public Comida()
         {
                 
         }
 
+        /// <summary>
+        /// Constructor de Comida.
+        /// </summary>
+        /// <param name="nombreComida">nombre</param>
+        /// <param name="tipoComida">tipo</param>
+        /// <param name="precio">precio</param>
         public Comida(string nombreComida, ETipo tipoComida, int precio)
         {
             this.nombreComida = nombreComida;
@@ -38,22 +46,30 @@ namespace Entidades
             this.precio = precio;
         }
 
-
+        #endregion
         // Propiedades 
+        #region Propiedades
 
-
+        /// <summary>
+        /// Get y set de nombre
+        /// </summary>
         public string NombreComida
         {
             get { return nombreComida; }
             set { this.nombreComida = value; }
         }
-
+        /// <summary>
+        /// Get y set de precio
+        /// </summary>
         public int Precio
         {
             get { return precio; }
             set { this.precio = value; }
         }
 
+        /// <summary>
+        /// Get parseado a string del tipo de comida
+        /// </summary>
         public string TipoComida
         {
             get 
@@ -71,6 +87,6 @@ namespace Entidades
                 }
             }
         }
-
+        #endregion
     }
 }

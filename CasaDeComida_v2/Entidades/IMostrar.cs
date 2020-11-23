@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    interface IArchivo<T>
+    public interface IMostrar<T>
     {
-        bool Guardar(string archivo, T datos);
-        bool Leer(string archivo, out T datos);
+        string MostrarDatos(IMostrar<T> elemento);
     }
 }

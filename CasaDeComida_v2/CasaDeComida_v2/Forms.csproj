@@ -89,9 +89,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Archivo\Archivo.csproj">
+      <Project>{5a4e4122-d44e-44ea-a1a0-6df1dc29fe04}</Project>
+      <Name>Archivo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{04113bd2-73da-4190-83bf-5f4601b70a4b}</Project>
       <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Validaciones\Validaciones.csproj">
+      <Project>{773efb61-dc24-4cec-bb15-c64469cc052b}</Project>
+      <Name>Validaciones</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,6 +10,12 @@ namespace Entidades
 {
     public static class GuardaString
     {
+
+        /// <summary>
+        /// Genero un archivo de texto y guarda el objeto ingresado por parametro, si no existe el archivo de texto lo crea y si existe lo escribe a lo ultimo 
+        /// </summary>
+        /// <param name="obj">Objeto a guardar en el txt</param>
+        /// <returns> true si se pudo guardar , false sino</returns>
         public static bool Guardar( Comida obj)
         {
             if (obj != null)

@@ -41,14 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchivoException.cs" />
     <Compile Include="Comida.cs" />
     <Compile Include="ConexionBD.cs" />
     <Compile Include="GuardarString.cs" />
-    <Compile Include="IArchivo.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SerializacionXml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Archivo\Archivo.csproj">
+      <Project>{5a4e4122-d44e-44ea-a1a0-6df1dc29fe04}</Project>
+      <Name>Archivo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Excepciones\Excepciones.csproj">
+      <Project>{849cd27b-c521-4bc1-97b0-5fd11ed13169}</Project>
+      <Name>Excepciones</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

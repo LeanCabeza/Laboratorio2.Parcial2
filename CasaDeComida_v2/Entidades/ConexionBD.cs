@@ -18,6 +18,7 @@ namespace Entidades
             conexionBD = new SqlConnection("Data Source = DESKTOP-DCNPJDC\\SQLEXPRESS ; Initial Catalog = CasaDeComida;Integrated Security=true");
         }                                                       //("Data Source = DESKTOP-DCNPJDC\\SQLEXPRESS ; Initial Catalog = CasaDeComida;Integrated Security=true");
 
+        // Pasa de string a etipo , por defecto pone indefinido.
         public static ETipo MapeoStringAeTipo (string aux )
         {
             switch (aux)
@@ -33,7 +34,11 @@ namespace Entidades
             }
         }
 
-
+        // El get comidas no se usa , hubo un cambio de planes.
+        /// <summary>
+        /// Trae la lista de comidas de la base de datos
+        /// </summary>
+        /// <returns>Retorna la lista de comidas </returns>
         public static List<Comida> GetComidas()
         {
             try
@@ -72,6 +77,10 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Sube comidas a la base de dato
+        /// </summary>
+        /// <param name="auxComida"></param>
         public static void SubirComida(Comida auxComida)
         {
             try
@@ -108,6 +117,9 @@ namespace Entidades
             }
 
         }
+
+
+        /// Esto servia para buscar por id una comidad y actualizarle algun campo. Funciona pero al final no la use.
 
         /*public static void ActualizarEstado(Comida auxComida)
         {

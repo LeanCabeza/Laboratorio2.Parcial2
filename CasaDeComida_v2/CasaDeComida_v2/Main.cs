@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using Entidades;
+using Archivo;
 
 
 
@@ -70,6 +71,9 @@ namespace CasaDeComida_v2
             }
         }
 
+        /// <summary>
+        /// Refrezca automaticamente el form ,siempre y cuando haya pedidos cocinandose.
+        /// </summary>
         private void AutoRefresh()
         {
             while (true)
@@ -97,7 +101,7 @@ namespace CasaDeComida_v2
                     //Esto a futuro lo reemplazare por un evento.
                     //GuardaString.Guardar(comidaAux);
 
-                    // FUERZO LA INVOCACION DEL EVENTO PARA QUE ME IMPRIMA EL TICKET :D
+                    //  Invoco a txtPrinter para que me imprima el ticket , que es un evento que tiene como manejador GuardarString.Guardar(Comida obj) , a travez de un delegado
                     txtPrinter.Invoke(comidaAux);
 
                     //Desestimar , solo para pruebitas
@@ -108,6 +112,9 @@ namespace CasaDeComida_v2
             }
         }
 
+        /// <summary>
+        /// Abre el form de agregar pedido.
+        /// </summary>
         private void AgregarPedido()
         {
             FormAgregarPedido FormAgregarPedido = new FormAgregarPedido();
@@ -121,13 +128,17 @@ namespace CasaDeComida_v2
             //Comida comida = new Comida("Nada",ETipo.ComidaGurmet,200);
             //ConexionBD.SubirComida(comida);
 
-            dgv_Cocinandose.DataSource = ConexionBD.GetComidas();
+            //dgv_Cocinandose.DataSource = ConexionBD.GetComidas();
+
             RefreshPedidos();
 
         }
 
+        /// <summary>
+        /// Actualiza el data grid de pedidos
+        /// </summary>
          public void RefreshPedidos()
-        {
+         {
             if (this.dgv_Cocinandose.InvokeRequired)
             {
                 this.dgv_Cocinandose.BeginInvoke((MethodInvoker)delegate ()
@@ -143,7 +154,9 @@ namespace CasaDeComida_v2
             }
         }
 
-
+        /// <summary>
+        /// Actualiza el data grid de entregados
+        /// </summary>
         public void RefreshEntregados()
         {
             if (this.dgv_Entregados.InvokeRequired)
@@ -159,11 +172,6 @@ namespace CasaDeComida_v2
                 this.dgv_Entregados.DataSource = null;
                 this.dgv_Entregados.DataSource = Inventario.Preparado.ToArray();
             }
-        }
-
-        private void btn_AgregarPedido_Click_1(object sender, EventArgs e)
-        {
-            AgregarPedido();
         }
 
         private void btn_ActualizarPedidos_Click(object sender, EventArgs e)
