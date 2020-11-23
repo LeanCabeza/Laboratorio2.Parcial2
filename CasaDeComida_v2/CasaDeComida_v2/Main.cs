@@ -14,10 +14,19 @@ using Entidades;
 
 namespace CasaDeComida_v2
 {
+    public delegate bool DelegadoTxT(Comida comida);
+
     public partial class Main : Form
     {
+        //Hilo que auto refrescara los pedidos cada x segundos , mientras la cola de pedidos sea mayor a 0.
         Thread hiloRefresh;
+        // Hilo de agregar pedidos , que me va permitir agregar pedidos de mientras el form principal sigue haciendo su trabajo.
         Thread hiloAgregarPedido;
+
+        // Evento que va imprimir el ticket 
+        public event DelegadoTxT txtPrinter;
+
+        // Acumulador de $$$ de las ventas.
         int total = 0;
         
         public Main()
@@ -41,6 +50,9 @@ namespace CasaDeComida_v2
 
                 this.RefreshEntregados();
                 this.RefreshPedidos();
+
+                //Le asigno el manejador al evento 
+                txtPrinter += GuardaString.Guardar;
 
                 if (!hiloRefresh.IsAlive)
                 {
@@ -81,7 +93,12 @@ namespace CasaDeComida_v2
 
                     RefreshPedidos();
                     RefreshEntregados();
-                    GuardaString.Guardar(comidaAux);
+
+                    //Esto a futuro lo reemplazare por un evento.
+                    //GuardaString.Guardar(comidaAux);
+
+                    // FUERZO LA INVOCACION DEL EVENTO PARA QUE ME IMPRIMA EL TICKET :D
+                    txtPrinter.Invoke(comidaAux);
 
                     //Desestimar , solo para pruebitas
                     //Inventario.SerializarPedidos();
