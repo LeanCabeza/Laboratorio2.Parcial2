@@ -1,0 +1,6 @@
+C:\Users\leand\source\repos\CasaDeComida_v2\Entidades\bin\Debug\Entidades.dll
+C:\Users\leand\source\repos\CasaDeComida_v2\Entidades\bin\Debug\Entidades.pdb
+C:\Users\leand\source\repos\CasaDeComida_v2\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\leand\source\repos\CasaDeComida_v2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\leand\source\repos\CasaDeComida_v2\Entidades\obj\Debug\Entidades.dll
+C:\Users\leand\source\repos\CasaDeComida_v2\Entidades\obj\Debug\Entidades.pdb
