@@ -15,6 +15,7 @@ using Archivo;
 
 namespace CasaDeComida_v2
 {
+
     public delegate bool DelegadoTxT(Comida comida);
 
     public partial class Main : Form
@@ -91,7 +92,9 @@ namespace CasaDeComida_v2
                     Comida comidaAux;
                     comidaAux = Inventario.Cocinandose.Dequeue();
                     total = comidaAux.Precio + total;
-                    ConexionBD.SubirComida(comidaAux);
+
+
+                    //ConexionBD.SubirComida(comidaAux);
                     Inventario.Preparado.Enqueue(comidaAux);
                     
 
@@ -107,10 +110,33 @@ namespace CasaDeComida_v2
                     //Desestimar , solo para pruebitas
                     //Inventario.SerializarPedidos();
 
+                    //Esta cochinada la hice para usar mi metodo extension de Count.
+
+                    if (this.lbl_NroCocinandose.InvokeRequired && this.lbl_NroEntregados.InvokeRequired)
+                    {
+                        this.lbl_NroCocinandose.BeginInvoke((MethodInvoker)delegate ()
+                        {
+                            lbl_NroCocinandose.Text = Inventario.Count(Inventario.Cocinandose).ToString();
+                        });
+
+                        this.lbl_NroEntregados.BeginInvoke((MethodInvoker)delegate ()
+                        {
+                            lbl_NroEntregados.Text = Inventario.Count(Inventario.Preparado).ToString();
+                        });
+
+
+                    }
+
                 }
                 Thread.Sleep(6000);
             }
         }
+
+
+
+
+
+
 
         /// <summary>
         /// Abre el form de agregar pedido.
@@ -182,6 +208,17 @@ namespace CasaDeComida_v2
         private void btn_ActualizarEntregados_Click(object sender, EventArgs e)
         {
             RefreshEntregados();
+        }
+
+        private void btn_AgregarPedido_Click(object sender, EventArgs e)
+        {
+            this.AgregarPedido();
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            hiloAgregarPedido.Abort();
+            hiloRefresh.Abort();
         }
 
     }

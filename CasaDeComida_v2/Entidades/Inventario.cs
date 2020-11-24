@@ -60,6 +60,26 @@ namespace Entidades
             }
         }
 
+        
+
+        /// <summary>
+        /// Extension que ademas de contar los pedidos los guarda en un string.
+        /// </summary>
+        /// <param name="colaComidas"></param>
+        /// <param name="label"></param>
+        /// <returns></returns>
+        public static string Count(this Queue<Comida> colaComidas)
+        {
+            int contador = 0 ;
+
+            foreach (var c in colaComidas)
+            {
+                contador++;
+            }
+
+            return contador.ToString();
+        }
+
 
         /*
          * 
@@ -72,15 +92,15 @@ namespace Entidades
 
                     List<Comida> pedidos = new List<Comida>();
 
-                    pedidos.Add(new Comida("Papa Frita", ETipo.ComidaRapida, 250));
-                    pedidos.Add(new Comida("Hamburgueza", ETipo.ComidaRapida, 250));
-                    pedidos.Add(new Comida("Empanada", ETipo.ComidaRapida, 250));
-                    pedidos.Add(new Comida("Pizza", ETipo.ComidaRapida, 250));
-                    pedidos.Add(new Comida("Panchito", ETipo.ComidaRapida, 250));
-                    pedidos.Add(new Comida("Fideos blancos con queso", ETipo.ComidaRapida, 250));
-                    pedidos.Add(new Comida("Bondiola", ETipo.ComidaRapida, 250));
-                    pedidos.Add(new Comida("Choripan", ETipo.ComidaRapida, 250));
-                    pedidos.Add(new Comida("Choripan", ETipo.ComidaRapida, 250));
+                    pedidos.Add(new Comida("Papa Frita",ETipo.ComidaRapida, 250));
+                    pedidos.Add(new Comida("Hamburgueza",ETipo.ComidaRapida, 250));
+                    pedidos.Add(new Comida("Empanada",ETipo.ComidaRapida, 250));
+                    pedidos.Add(new Comida("Pizza",ETipo.ComidaRapida, 250));
+                    pedidos.Add(new Comida("Panchito",ETipo.ComidaRapida, 250));
+                    pedidos.Add(new Comida("Fideos blancos con queso",ETipo.ComidaRapida, 250));
+                    pedidos.Add(new Comida("Bondiola",ETipo.ComidaRapida, 250));
+                    pedidos.Add(new Comida("Choripan",ETipo.ComidaRapida, 250));
+                    pedidos.Add(new Comida("Choripan",ETipo.ComidaRapida, 250));
 
                     return auxPedidos.Guardar(path, pedidos);
                 }
