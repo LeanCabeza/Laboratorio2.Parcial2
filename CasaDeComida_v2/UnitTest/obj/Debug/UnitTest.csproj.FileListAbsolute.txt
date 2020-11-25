@@ -17,3 +17,7 @@ C:\Users\leand\source\repos\CasaDeComida_v2\UnitTest\obj\Debug\UnitTest.csproj.C
 C:\Users\leand\source\repos\CasaDeComida_v2\UnitTest\obj\Debug\UnitTest.csproj.CopyComplete
 C:\Users\leand\source\repos\CasaDeComida_v2\UnitTest\obj\Debug\UnitTest.dll
 C:\Users\leand\source\repos\CasaDeComida_v2\UnitTest\obj\Debug\UnitTest.pdb
+C:\Users\leand\source\repos\CasaDeComida_v2\UnitTest\bin\Debug\Archivo.dll
+C:\Users\leand\source\repos\CasaDeComida_v2\UnitTest\bin\Debug\Excepciones.dll
+C:\Users\leand\source\repos\CasaDeComida_v2\UnitTest\bin\Debug\Archivo.pdb
+C:\Users\leand\source\repos\CasaDeComida_v2\UnitTest\bin\Debug\Excepciones.pdb

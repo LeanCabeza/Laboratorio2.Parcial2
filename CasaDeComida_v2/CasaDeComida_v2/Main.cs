@@ -25,7 +25,7 @@ namespace CasaDeComida_v2
         // Hilo de agregar pedidos , que me va permitir agregar pedidos de mientras el form principal sigue haciendo su trabajo.
         Thread hiloAgregarPedido;
 
-        // Evento que va imprimir el ticket 
+        // Declaro el evento que va imprimir el ticket 
         public event DelegadoTxT txtPrinter;
 
         // Acumulador de $$$ de las ventas.
@@ -34,9 +34,11 @@ namespace CasaDeComida_v2
         public Main()
         {
             InitializeComponent();
+            //Inicializo el thread 
             hiloRefresh = new Thread(this.AutoRefresh);
-
+            //Inicializo el thread 
             hiloAgregarPedido = new Thread(this.AgregarPedido);
+           
             hiloAgregarPedido.Start();
 
         }
@@ -53,7 +55,7 @@ namespace CasaDeComida_v2
                 this.RefreshEntregados();
                 this.RefreshPedidos();
 
-                //Le asigno el manejador al evento 
+                //Le asocio el manejador al evento.
                 txtPrinter += GuardaString.Guardar;
 
                 if (!hiloRefresh.IsAlive)
@@ -93,10 +95,9 @@ namespace CasaDeComida_v2
                     comidaAux = Inventario.Cocinandose.Dequeue();
                     total = comidaAux.Precio + total;
 
-
-                    //ConexionBD.SubirComida(comidaAux);
                     Inventario.Preparado.Enqueue(comidaAux);
-                    
+                    ConexionBD.SubirComida(comidaAux);
+
 
                     RefreshPedidos();
                     RefreshEntregados();
